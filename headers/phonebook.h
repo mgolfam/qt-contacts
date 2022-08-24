@@ -10,6 +10,8 @@ class PhoneBook {
 public:
     PhoneBook();
 
+    Contact *getContactById(int id);
+
     int addContact(Contact *c);
 
     int addContact(QString name, QString phone);

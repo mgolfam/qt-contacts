@@ -44,7 +44,22 @@ void MainWindow::on_actionAdd_triggered() {
 
 void MainWindow::on_actionEdit_triggered() {
     const QString &s = ui->listWidget->currentItem()->text();
-    std::cout << s.toStdString() << std::endl;
+    QStringList lst = s.split(" ");
+    std::cout << lst.at(0).toStdString() << std::endl;
+
+    DialogAddUser diag;
+
+    Contact * c = pbook->getContactById(std::stoi(lst.at(0).toStdString()));
+    diag.setName(c->getName());
+    diag.setPhone(c->getPhone());
+    auto res = diag.exec();
+
+    if (res == QDialog::Accepted) {
+        c->setName(diag.name());
+        c->setPhone(diag.phone());
+
+        refreshUi();
+    }
 }
 
 void MainWindow::on_actionExport_triggered() {

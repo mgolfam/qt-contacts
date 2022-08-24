@@ -47,6 +47,16 @@ bool PhoneBook::removeContact(int id) {
     return false;
 }
 
+Contact * PhoneBook::getContactById(int id) {
+    for (int i = 0; i < this->contacts.size(); i++) {
+        if (this->contacts[i]->getId() == id) {
+            return this->contacts[i];
+        }
+    }
+
+    return nullptr;
+}
+
 std::vector<Contact *> PhoneBook::getContacts() { return this->contacts; }
 
 bool PhoneBook::loadData(QString p) {
@@ -77,6 +87,7 @@ bool PhoneBook::loadData(QString p) {
 
     file.close();
     std::cout << "loading contacts is finished." << std::endl;
+    return true;
 }
 
 bool PhoneBook::saveData(QString p) {
@@ -88,6 +99,8 @@ bool PhoneBook::saveData(QString p) {
         c->serialize(a);
     }
     file.close();
+
+    return true;
 }
 
 void PhoneBook::exportCsv(QString p) {
