@@ -24,8 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
-{
+class Ui_MainWindow {
 public:
     QAction *actionSave;
     QAction *actionLoad;
@@ -41,8 +40,7 @@ public:
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *MainWindow)
-    {
+    void setupUi(QMainWindow *MainWindow) {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(794, 457);
@@ -99,8 +97,7 @@ public:
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
-    {
+    void retranslateUi(QMainWindow *MainWindow) {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         actionSave->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
         actionLoad->setText(QApplication::translate("MainWindow", "Load", Q_NULLPTR));
@@ -115,7 +112,8 @@ public:
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class MainWindow : public Ui_MainWindow {
+    };
 } // namespace Ui
 
 QT_END_NAMESPACE

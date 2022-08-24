@@ -1,9 +1,9 @@
-#include "dialogadduser.h"
-#include "ui_dialogadduser.h"
+#include "headers/dialogadduser.h"
+#include "headers/ui_dialogadduser.h"
 
 DialogAddUser::DialogAddUser(QWidget *parent)
-    : QDialog(parent), ui(new Ui::DialogAddUser) {
-  ui->setupUi(this);
+        : QDialog(parent), ui(new Ui::DialogAddUser) {
+    ui->setupUi(this);
 }
 
 DialogAddUser::~DialogAddUser() { delete ui; }
