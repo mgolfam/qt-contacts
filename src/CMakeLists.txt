@@ -8,3 +8,4 @@
 #   ui              Qt Widgets presentation: table, dialog, main window   (Qt Widgets)
 #   main            composition root: builds the adapters and wires them up
 add_subdirectory(domain)
+add_subdirectory(application)

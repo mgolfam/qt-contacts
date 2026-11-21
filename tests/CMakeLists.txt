@@ -14,3 +14,4 @@ endfunction()
 
 contacts_add_test(tst_contact contacts_domain)
 contacts_add_test(tst_phone_book contacts_domain)
+contacts_add_test(tst_contact_service contacts_application)
