@@ -9,3 +9,4 @@
 #   main            composition root: builds the adapters and wires them up
 add_subdirectory(domain)
 add_subdirectory(application)
+add_subdirectory(infrastructure)
